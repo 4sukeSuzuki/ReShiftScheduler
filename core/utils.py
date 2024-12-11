@@ -30,3 +30,13 @@ def get_gene_value_range(file_path):
     data = pd.read_csv(file_path)
     columns = data.shape[1] - 1  # 1列目を除外
     return 0, columns  # 最小値は0、最大値は列数
+
+def expand_rows(data, repeat_count):
+    """
+    データの各行を指定回数だけ複製して拡張
+    :param data: pandas.DataFrame, 元データ
+    :param repeat_count: int, 各行を何回複製するか
+    :return: pandas.DataFrame, 拡張されたデータ
+    """
+    expanded_data = pd.concat([data] * repeat_count, ignore_index=True)
+    return expanded_data.drop_duplicates().reset_index(drop=True)

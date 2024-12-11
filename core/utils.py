@@ -38,5 +38,6 @@ def expand_rows(data, repeat_count):
     :param repeat_count: int, 各行を何回複製するか
     :return: pandas.DataFrame, 拡張されたデータ
     """
-    expanded_data = pd.concat([data] * repeat_count, ignore_index=True)
-    return expanded_data.drop_duplicates().reset_index(drop=True)
+    expanded_data = data.loc[data.index.repeat(repeat_count)].reset_index(drop=True)
+    # print("拡張済み\n",expanded_data) #デバッグ用
+    return expanded_data

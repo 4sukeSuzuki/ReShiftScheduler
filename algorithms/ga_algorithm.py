@@ -19,8 +19,8 @@ teacher_hope_data = pd.read_csv(TEACHER_HOPE_FILE)
 teacher_sub_data = pd.read_csv(TEACHER_SUB_FILE)
 
 # 担当可能数に基づいて行を拡張
-teacher_hope_data = expand_rows(teacher_hope_data, ASSIGNABLE_COUNT)
-teacher_sub_data = expand_rows(teacher_sub_data, ASSIGNABLE_COUNT)
+teacher_hope_data = expand_rows(teacher_hope_data, ASSIGNABLE_COUNT, file_name="teacher_hope_expanded.csv")
+teacher_sub_data = expand_rows(teacher_sub_data, ASSIGNABLE_COUNT, file_name="teacher_sub_expanded.csv")
 
 # 遺伝子の形状と範囲を取得
 GENE_ROWS = teacher_hope_data.shape[0]

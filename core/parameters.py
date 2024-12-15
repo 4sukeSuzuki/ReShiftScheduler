@@ -21,4 +21,7 @@ STUDENT_HOPE_FILE_NAME = "students_hope/EK_student_hope.csv"
 STUDENT_SUB_FILE_NAME = "students_sub/EK_student_sub.csv"
 
 # 担当可能数（講師データセットの各行を何回複製するか =1:N授業）
-ASSIGNABLE_COUNT = 3
+ASSIGNABLE_COUNT = 2
+
+# デバッグ用ファイルのエクスポートパス
+EXPORT_PASS = "datasets/export_file"
